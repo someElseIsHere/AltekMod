@@ -1,0 +1,12 @@
+{
+  "altekmod.altmu.name": "AltMU Server",
+  "altekmod.altmu.gui.name": "AltMU Server GUI",
+  "altekmod.altmu.gui.button.back": "Back",
+  "altekmod.altmu.gui.button.join": "Join Server",
+  "altekmod.altmu.gui.message.full": "Server is full.",
+  "altekmod.altmu.gui.message.player_count": "Players Online ({0}/{1})",
+  "altekmod.altmu.gui.message.loading": "Loading...",
+  "altekmod.altmu.gui.message.error": "Please try again later",
+  "altekmod.altmu.gui.message.empty": "No players online",
+  "altekmod.altmu.gui.message.error_eggy": "\"Go Touch Grass\" - Eggy"
+}

@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.swa.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": [
+    "dm.client.BusClientEventsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
