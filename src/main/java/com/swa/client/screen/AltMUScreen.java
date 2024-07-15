@@ -10,7 +10,6 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.RotatingCubeMapRenderer;
 import net.minecraft.client.gui.screen.ConnectScreen;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.network.ServerInfo;
 import net.minecraft.client.util.math.MatrixStack;
@@ -35,7 +34,7 @@ public class AltMUScreen extends Screen {
     public AltMUScreen(Screen previousScreen) {
         super(new TranslatableText("altekmod.altmu.gui.name"));
         this.loadState = GuiDMU.LoadState.LOADING;
-        this.panorama = new RotatingCubeMapRenderer(TitleScreen.PANORAMA_CUBE_MAP);
+        this.panorama = new VortexCubeMapRenderer();
         this.previousScreen = previousScreen;
         new Thread(() -> {
             String s = IOUtil.readFileURL("https://api.mcsrvstat.us/3/" + IP);
@@ -50,7 +49,7 @@ public class AltMUScreen extends Screen {
                         this.loadState = GuiDMU.LoadState.LOADED;
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    AltekMod.LOGGER.error(e);
                     this.loadState = GuiDMU.LoadState.ERROR;
                 }
             } else {

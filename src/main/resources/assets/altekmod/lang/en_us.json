@@ -8,5 +8,6 @@
   "altekmod.altmu.gui.message.loading": "Loading...",
   "altekmod.altmu.gui.message.error": "Please try again later",
   "altekmod.altmu.gui.message.empty": "No players online",
-  "altekmod.altmu.gui.message.error_eggy": "\"Go Touch Grass\" - Eggy"
+  "altekmod.altmu.gui.message.error_eggy": "\"Go Touch Grass\" - Eggy",
+  "altekmod.altmu.gui.button.discord": "AltMU Discord"
 }
