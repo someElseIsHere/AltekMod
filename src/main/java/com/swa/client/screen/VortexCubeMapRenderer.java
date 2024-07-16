@@ -16,7 +16,7 @@ public class VortexCubeMapRenderer extends RotatingCubeMapRenderer {
     public void render(float delta, float alpha) {
         int width = MinecraftClient.getInstance().currentScreen.width;
         int height = MinecraftClient.getInstance().currentScreen.height;
-        float scale = Math.max(width, height) / 1.5f;
+        float scale = Math.max(width, height) / 1.25f;
 
         GlStateManager.pushMatrix();
         GlStateManager.translatef(width / 2f, height / 2f, -100);

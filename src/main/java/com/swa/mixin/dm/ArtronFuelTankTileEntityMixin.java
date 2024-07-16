@@ -18,7 +18,8 @@ public abstract class ArtronFuelTankTileEntityMixin implements Tickable {
     public double charge;
     @Shadow
     public abstract void sendUpdates();
-    @Shadow public abstract ItemStack fillGlass(ItemStack stack);
+    @Shadow
+    public abstract ItemStack fillGlass(ItemStack stack);
 
     @Override
     public void tick() {

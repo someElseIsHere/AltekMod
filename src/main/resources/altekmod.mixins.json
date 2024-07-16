@@ -4,10 +4,12 @@
   "package": "com.swa.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "dm.ArtronFuelTankTileEntityMixin"
+    "dm.ArtronFuelTankTileEntityMixin",
+    "dm.FlightPanelBlockMixin"
   ],
   "client": [
-    "dm.client.BusClientEventsMixin"
+    "dm.client.BusClientEventsMixin",
+    "dm.client.FlightPanelBlockClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -4,9 +4,7 @@ import com.swa.client.screen.AltMUScreen;
 import com.swa.client.screen.VortexCubeMapRenderer;
 import com.swdteam.client.init.BusClientEvents;
 import com.swdteam.main.DMConfig;
-import net.minecraft.block.DropperBlock;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.RotatingCubeMapRenderer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -22,11 +20,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(BusClientEvents.class)
+@Mixin(value = BusClientEvents.class, remap = false)
 public class BusClientEventsMixin {
 
     @ModifyArg(
-            method = "guiEvent(Lnet/minecraftforge/client/event/GuiScreenEvent$InitGuiEvent;)V", remap = false, index = 4,
+            method = "guiEvent(Lnet/minecraftforge/client/event/GuiScreenEvent$InitGuiEvent;)V", index = 4,
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/widget/ButtonWidget;<init>(IIIILnet/minecraft/text/Text;Lnet/minecraft/client/gui/widget/ButtonWidget$PressAction;)V", remap = true)
     )
     private static Text modifyDMUButtonText(Text text) {
@@ -34,7 +32,7 @@ public class BusClientEventsMixin {
     }
 
     @ModifyArg(
-            method = "guiEvent(Lnet/minecraftforge/client/event/GuiScreenEvent$InitGuiEvent;)V", remap = false, index = 5,
+            method = "guiEvent(Lnet/minecraftforge/client/event/GuiScreenEvent$InitGuiEvent;)V", index = 5,
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/widget/ButtonWidget;<init>(IIIILnet/minecraft/text/Text;Lnet/minecraft/client/gui/widget/ButtonWidget$PressAction;)V", remap = true)
     )
     private static ButtonWidget.PressAction modifyDMUButtonAction(ButtonWidget.PressAction action) {
@@ -43,7 +41,7 @@ public class BusClientEventsMixin {
     }
 
     @Inject(
-            method = "guiEvent(Lnet/minecraftforge/client/event/GuiScreenEvent$InitGuiEvent;)V", remap = false,
+            method = "guiEvent(Lnet/minecraftforge/client/event/GuiScreenEvent$InitGuiEvent;)V",
             at = @At(value = "RETURN")
     )
     private static void postGuiEvent(GuiScreenEvent.InitGuiEvent event, CallbackInfo ci) {
@@ -64,7 +62,7 @@ public class BusClientEventsMixin {
     }
 
     @Inject(
-            method = "guiEvent(Lnet/minecraftforge/client/event/GuiOpenEvent;)V", remap = false,
+            method = "guiEvent(Lnet/minecraftforge/client/event/GuiOpenEvent;)V",
             at = @At(value = "TAIL")
     )
     private static void postGuiEvent(GuiOpenEvent event, CallbackInfo ci) {
