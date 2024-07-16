@@ -9,7 +9,9 @@
   ],
   "client": [
     "dm.client.BusClientEventsMixin",
-    "dm.client.FlightPanelBlockClientMixin"
+    "dm.client.FlightPanelBlockClientMixin",
+    "dm.client.TardisDoorBlockMixin",
+    "dm.client.DMTileEntityRenderRegistryMixin"
   ],
   "injectors": {
     "defaultRequire": 1
