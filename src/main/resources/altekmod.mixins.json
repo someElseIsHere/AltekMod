@@ -5,13 +5,14 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "dm.ArtronFuelTankTileEntityMixin",
-    "dm.FlightPanelBlockMixin"
+    "dm.FlightPanelBlockMixin",
+    "dm.TardisActionListMixin"
   ],
   "client": [
     "dm.client.BusClientEventsMixin",
+    "dm.client.DMTileEntityRenderRegistryMixin",
     "dm.client.FlightPanelBlockClientMixin",
-    "dm.client.TardisDoorBlockMixin",
-    "dm.client.DMTileEntityRenderRegistryMixin"
+    "dm.client.TardisDoorBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

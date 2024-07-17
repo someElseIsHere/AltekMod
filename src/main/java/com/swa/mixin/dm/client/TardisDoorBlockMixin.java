@@ -17,7 +17,7 @@ public class TardisDoorBlockMixin {
 
     @Inject(method = "getRenderType", at = @At("HEAD"), cancellable = true)
     public void getRenderType(BlockState state, CallbackInfoReturnable<BlockRenderType> cir) {
-        if (MinecraftClient.getInstance().player != null && MinecraftClient.getInstance().player.world.getRegistryKey() == DMDimensions.TARDIS) {
+        if (MinecraftClient.getInstance().player.world.getRegistryKey() == DMDimensions.TARDIS) {
             TardisData tardisCache = ClientTardisCache.getTardisData(MinecraftClient.getInstance().player.getBlockPos());
             if (!tardisCache.isInFlight()) cir.setReturnValue(BlockRenderType.INVISIBLE);
         }
